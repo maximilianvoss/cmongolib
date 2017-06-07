@@ -1,5 +1,5 @@
 #include "mongo.h"
-#include "jsonhandling.h"
+/*#include "jsonhandling.h"
 
 #define COMMON_MONGO_DEBUG
 #include "../common/logging.h"
@@ -257,3 +257,4 @@ uint8_t mongo_isOidValid(char *oid) {
 	}
 	return 1;
 }
+ ///*/
