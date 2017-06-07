@@ -6,10 +6,16 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/libs/mongo-c-dr
 set(BSON_ROOT_DIR ${PROJECT_SOURCE_DIR}/libs/libbson)
 
 add_subdirectory(libs/libbson)
-add_subdirectory(libs/mongo-c-driver)
+
+add_custom_target(mongocdriver
+        COMMAND ./autogen.sh --enable-maintainer-flags --disable-automatic-init-and-cleanup --with-libbson=bundled && make
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/libs/mongo-c-driver
+)
 
 set(SOURCE_FILES
         mongo.c
         mongo.h)
 
-add_executable(cmongolib ${SOURCE_FILES})
+if (NOT TARGET cmongolib )
+    add_library(cmongolib ${SOURCE_FILES})
+endif()
