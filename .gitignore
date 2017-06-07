@@ -1,33 +1,22 @@
-# Object files
+# C Objects
 *.o
-*.ko
-*.obj
-*.elf
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
+*.so
 *.la
 *.lo
+*.slo
+.deps
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Logs
+*.log
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Mac Objects
+.DS_Store
 
-# Debug files
-*.dSYM/
-*.su
+# IDE
+*.iml
+.idea
+
+# Maven build dir
+target
+
+cmake-build-*
