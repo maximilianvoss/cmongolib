@@ -2,7 +2,6 @@
 	path = libs/libbson
 	url = https://github.com/mongodb/libbson.git
 	branch = master
-
 [submodule "libs/mongo-c-driver"]
 	path = libs/mongo-c-driver
 	url = https://github.com/mongodb/mongo-c-driver.git
