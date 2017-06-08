@@ -10,12 +10,16 @@ add_subdirectory(libs/libbson)
 add_custom_target(mongocdriver ALL
         ./autogen.sh --enable-maintainer-flags --disable-automatic-init-and-cleanup --with-libbson=bundled && make
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/libs/mongo-c-driver
-)
+        )
 
 set(SOURCE_FILES
-        mongo.c
-        mongo.h)
+        cmongolib.c
+        cmongolib.h)
 
-if (NOT TARGET cmongolib )
+include_directories(${CMAKE_SOURCE_DIR}/libs/mongo-c-driver/src/mongoc ${CMAKE_SOURCE_DIR}/libs/libbson/src/bson)
+link_directories(${CMAKE_SOURCE_DIR}/libs/mongo-c-driver ${CMAKE_SOURCE_DIR}/libs/libbson)
+
+if (NOT TARGET cmongolib)
     add_library(cmongolib ${SOURCE_FILES})
-endif()
+    target_link_libraries(cmongolib libbson libmongoc)
+endif ()

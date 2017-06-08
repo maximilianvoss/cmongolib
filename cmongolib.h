@@ -1,0 +1,4 @@
+#ifndef CMONGOLIB_CMONGOLIB_H
+#define CMONGOLIB_CMONGOLIB_H
+
+#endif
