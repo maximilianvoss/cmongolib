@@ -5,4 +5,4 @@
 [submodule "libs/mongo-c-driver"]
 	path = libs/mongo-c-driver
 	url = https://github.com/mongodb/mongo-c-driver.git
-	branch = master
+	branch = tags/1.6.3
