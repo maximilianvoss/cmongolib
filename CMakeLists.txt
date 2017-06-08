@@ -7,10 +7,9 @@ set(BSON_ROOT_DIR ${PROJECT_SOURCE_DIR}/libs/libbson)
 
 add_subdirectory(libs/libbson)
 
-add_custom_target(mongocdriver
+add_custom_target(mongocdriver ALL
         ./autogen.sh --enable-maintainer-flags --disable-automatic-init-and-cleanup --with-libbson=bundled && make
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/libs/mongo-c-driver
-        COMMENT test
 )
 
 set(SOURCE_FILES
