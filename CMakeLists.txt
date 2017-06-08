@@ -20,6 +20,6 @@ include_directories(${CMAKE_SOURCE_DIR}/libs/mongo-c-driver/src/mongoc ${CMAKE_S
 link_directories(${CMAKE_SOURCE_DIR}/libs/mongo-c-driver ${CMAKE_SOURCE_DIR}/libs/libbson)
 
 if (NOT TARGET cmongolib)
-    add_library(cmongolib ${SOURCE_FILES})
+    add_executable(cmongolib ${SOURCE_FILES})
     target_link_libraries(cmongolib libbson libmongoc)
 endif ()

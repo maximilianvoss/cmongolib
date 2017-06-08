@@ -22,3 +22,8 @@ void mongo_initialize(mongo_config_t *config) {
 	}
 	LOGGING_DEBUG("DONE");
 }
+
+int main (int argc, char **argv) {
+	printf("test\n");
+	return 0;
+}
